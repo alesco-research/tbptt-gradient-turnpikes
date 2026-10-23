@@ -1,0 +1,36 @@
+{
+  "horizon": 20,
+  "state_box": [-1.0, 1.0],
+  "search": {
+    "screening": "all admissible starts; zero plus 32 deterministic scrambled-Sobol states",
+    "other_seeds": {"unique_windows": 300, "initial_population": 22, "first_iterations": 50, "final_windows": 50, "final_iterations": 125},
+    "seed_3": {"unique_windows": 1000, "initial_population": 34, "first_iterations": 75, "final_windows": 150, "final_iterations": 250},
+    "restart_families": ["screen winner", "zero", "Sobol", "random", "corners", "axis boundary"],
+    "learning_rates": [0.01, 0.03, 0.06],
+    "optimizer": "projected Adam ascent retaining the best iterate"
+  },
+  "dtype": "float64",
+  "operator_norm": "largest singular value (induced 2-norm)",
+  "state_jacobian": "diag(1 - x[t + 1]**2) @ rnn.weight_hh_l0",
+  "trajectory": {
+    "definition": "training inputs followed by validation inputs with contiguous state propagation",
+    "initial_state": "x_0 = 0",
+    "train_validation_boundary": "no reset",
+    "trajectory_length": 100000,
+    "train_length": 80000,
+    "validation_length": 20000,
+    "normalization": "none",
+    "official_test_used": false
+  },
+  "checkpoint_identifiers": [
+    "outputs/bptt/run_seed_001/final_model.pt",
+    "outputs/bptt/run_seed_002/final_model.pt",
+    "outputs/bptt/run_seed_003/final_model.pt",
+    "outputs/bptt/run_seed_004/final_model.pt",
+    "outputs/bptt/run_seed_005/final_model.pt"
+  ],
+  "checkpoint_update": 5000,
+  "state_dimension": 16,
+  "product_device": "cpu",
+  "certificate_scope": "exact all-start evaluation on the finite development trajectory; not global over states and inputs"
+}

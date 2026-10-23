@@ -1,0 +1,130 @@
+{
+  "dtype": "float64",
+  "contexts": {
+    "past": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ],
+    "future": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ]
+  },
+  "update_length": 50,
+  "analysis_windows": [
+    {
+      "id": 0,
+      "update_start": 36685,
+      "update_end": 36734
+    },
+    {
+      "id": 1,
+      "update_start": 65491,
+      "update_end": 65540
+    },
+    {
+      "id": 2,
+      "update_start": 13571,
+      "update_end": 13620
+    },
+    {
+      "id": 3,
+      "update_start": 14590,
+      "update_end": 14639
+    },
+    {
+      "id": 4,
+      "update_start": 72092,
+      "update_end": 72141
+    },
+    {
+      "id": 5,
+      "update_start": 76615,
+      "update_end": 76664
+    },
+    {
+      "id": 6,
+      "update_start": 31733,
+      "update_end": 31782
+    },
+    {
+      "id": 7,
+      "update_start": 69946,
+      "update_end": 69995
+    },
+    {
+      "id": 8,
+      "update_start": 29310,
+      "update_end": 29359
+    },
+    {
+      "id": 9,
+      "update_start": 61612,
+      "update_end": 61661
+    },
+    {
+      "id": 10,
+      "update_start": 70653,
+      "update_end": 70702
+    },
+    {
+      "id": 11,
+      "update_start": 69859,
+      "update_end": 69908
+    },
+    {
+      "id": 12,
+      "update_start": 5546,
+      "update_end": 5595
+    },
+    {
+      "id": 13,
+      "update_start": 37744,
+      "update_end": 37793
+    },
+    {
+      "id": 14,
+      "update_start": 23295,
+      "update_end": 23344
+    },
+    {
+      "id": 15,
+      "update_start": 79274,
+      "update_end": 79323
+    },
+    {
+      "id": 16,
+      "update_start": 15907,
+      "update_end": 15956
+    },
+    {
+      "id": 17,
+      "update_start": 20294,
+      "update_end": 20343
+    },
+    {
+      "id": 18,
+      "update_start": 73654,
+      "update_end": 73703
+    },
+    {
+      "id": 19,
+      "update_start": 49620,
+      "update_end": 49669
+    }
+  ],
+  "checkpoint_identifiers": [
+    "outputs/bptt/run_seed_001/final_model.pt",
+    "outputs/bptt/run_seed_002/final_model.pt",
+    "outputs/bptt/run_seed_003/final_model.pt",
+    "outputs/bptt/run_seed_004/final_model.pt",
+    "outputs/bptt/run_seed_005/final_model.pt"
+  ],
+  "aggregation": "median over 100 fixed-parameter gradient comparisons per context cell"
+}

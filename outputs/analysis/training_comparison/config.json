@@ -1,0 +1,65 @@
+{
+  "experiment": "wh_training_comparison_final",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "dtype": "float32",
+  "device": "auto",
+  "resolved_device": "cuda",
+  "validation_selection": {
+    "cadence_updates": 500,
+    "strict_improvement": true,
+    "final_model": "validation_selected_best"
+  },
+  "bptt": {
+    "update_length": 1000,
+    "mini_batch_size": 1,
+    "max_updates": 5000,
+    "sampling_seed": "model seed",
+    "full_context": true,
+    "past_context_margin": 40,
+    "future_context_margin": 40
+  },
+  "tbptt": {
+    "contexts": [
+      0,
+      10,
+      20,
+      40
+    ],
+    "update_length": 50,
+    "mini_batch_size": 4,
+    "max_updates": 5000,
+    "sampling_seed": "10000 + model seed",
+    "start_domain": [
+      40,
+      79910
+    ],
+    "symmetric": true,
+    "past_context_margin": 40,
+    "future_context_margin": 40
+  },
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate_schedule": {
+      "updates_1_1500": 0.001,
+      "updates_1501_3000": 0.0003,
+      "updates_3001_5000": 0.0001
+    }
+  },
+  "test_usage": "final evaluation only after frozen training/model-selection protocol",
+  "runtime_measurement": {
+    "definition": "synchronized optimizer-update computation only; validation, checkpointing, and final evaluation excluded",
+    "cuda_synchronization": "immediately before and after every optimizer update",
+    "provenance_fields": [
+      "model_metrics_source",
+      "timing_source"
+    ],
+    "frozen_bptt_timing_note": "For frozen BPTT metrics with incomplete original runtime records, timing_source=deterministic_protocol_timing_repeat is a synchronized deterministic repetition of the same production protocol."
+  },
+  "state_dimension": 16
+}

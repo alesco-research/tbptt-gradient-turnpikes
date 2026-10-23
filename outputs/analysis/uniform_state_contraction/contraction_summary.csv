@@ -1,0 +1,6 @@
+seed,checkpoint_update,state_dim,checkpoint_identifier,horizon,trajectory_length,train_length,validation_length,dtype,worst_value_found,worst_start_index,numerical_counterexample_found
+1,5000,16,outputs/bptt/run_seed_001/final_model.pt,20,100000,80000,20000,float64,0.6879361069509036,99661,False
+2,5000,16,outputs/bptt/run_seed_002/final_model.pt,20,100000,80000,20000,float64,0.8706974873165537,23910,False
+3,5000,16,outputs/bptt/run_seed_003/final_model.pt,20,100000,80000,20000,float64,0.9707560311062616,24982,False
+4,5000,16,outputs/bptt/run_seed_004/final_model.pt,20,100000,80000,20000,float64,0.8780732401660973,87702,False
+5,5000,16,outputs/bptt/run_seed_005/final_model.pt,20,100000,80000,20000,float64,0.8671335465601474,93107,False

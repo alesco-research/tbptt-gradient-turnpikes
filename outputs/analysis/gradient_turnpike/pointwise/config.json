@@ -1,0 +1,54 @@
+{
+  "checkpoint": "outputs/bptt/run_seed_001/final_model.pt",
+  "configuration_path": "configs/wh_paper.json",
+  "configured_gradient_turnpike": {
+    "checkpoint": "outputs/bptt/run_seed_001/final_model.pt",
+    "update_start": 40000,
+    "update_length": 300,
+    "symmetric_contexts": [
+      0,
+      5,
+      10,
+      20,
+      40
+    ],
+    "dtype": "float64"
+  },
+  "data_split": "WH training trajectory only",
+  "dtype": "float64",
+  "update_interval": [
+    40000,
+    40299
+  ],
+  "update_length": 300,
+  "full_context": [
+    0,
+    79999
+  ],
+  "full_context_T_P": 40000,
+  "full_context_T_F": 39700,
+  "symmetric_contexts": [
+    0,
+    5,
+    10,
+    20,
+    40
+  ],
+  "full_gradient_norm": 0.16491460827091345,
+  "relative_error_denominator": "max(norm(g_t), torch.finfo(float64).eps) at each t",
+  "train_fraction": 0.8,
+  "seed": 1,
+  "device": "cpu",
+  "versions": {
+    "torch": "2.14.0+cu130",
+    "nonlinear-benchmarks": "1.0.1",
+    "matplotlib": "3.11.1"
+  },
+  "python_version": "3.12.14",
+  "deterministic_algorithms": false,
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": false,
+  "cuda_version": "13.0",
+  "cudnn_version": 92400,
+  "device_name": "cpu"
+}

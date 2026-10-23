@@ -1,0 +1,7 @@
+{
+  "assessment": "deterministic adversarial numerical search over initial states in [-1,1]^16 on the fixed development input; not a certified continuous-domain supremum",
+  "horizon": 20,
+  "overall_maximum": 0.9707560311062616,
+  "overall_maximum_seed": 3,
+  "numerical_counterexample_found": false
+}

@@ -1,0 +1,27 @@
+.venv/
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+
+# Retain only publication artifacts; ignore newly generated run histories.
+outputs/**
+!outputs/**/
+!outputs/analysis/gradient_turnpike/pointwise/config.json
+!outputs/analysis/gradient_turnpike/pointwise/pointwise_gradient_errors.csv
+!outputs/analysis/gradient_error_heatmap/config.json
+!outputs/analysis/gradient_error_heatmap/aggregated_gradient_errors.csv
+!outputs/analysis/uniform_state_contraction/config.json
+!outputs/analysis/uniform_state_contraction/contraction_summary.csv
+!outputs/analysis/uniform_state_contraction/summary.json
+!outputs/analysis/training_comparison/config.json
+!outputs/analysis/training_comparison/per_run_metrics.csv
+!outputs/analysis/training_comparison/summary.csv
+!outputs/bptt/run_seed_00[1-5]/final_model.pt
+!outputs/bptt/training_comparison_final/bptt_seed_00[1-5]/best_model.pt
+!outputs/tbptt/training_comparison_final/tbptt_T[0-4]0_seed_00[1-5]/best_model.pt

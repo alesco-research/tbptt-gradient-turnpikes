@@ -1,0 +1,78 @@
+{
+  "data": {
+    "benchmark": "WienerHammerBenchMark",
+    "train_fraction": 0.8,
+    "normalization": "none"
+  },
+  "model": {
+    "state_dim": 16,
+    "activation": "tanh"
+  },
+  "optimization": {
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "update_length": 50,
+    "max_updates": 5000,
+    "validation_every_updates": 50,
+    "dtype": "float32",
+    "learning_rate_schedule": {
+      "name": "staged",
+      "updates_1_1500": 0.001,
+      "updates_1501_3000": 0.0003,
+      "updates_3001_5000": 0.0001
+    }
+  },
+  "reproducibility": {
+    "seeds": [1, 2, 3, 4, 5],
+    "device": "auto",
+    "deterministic_algorithms": true
+  },
+  "sampling": {
+    "common_context_margin": 40
+  },
+  "fixed_parameter_gradient_analysis": {
+    "past_contexts": [0, 5, 10, 20, 40],
+    "future_contexts": [0, 5, 10, 20, 40],
+    "interval_count": 20,
+    "sampling_seed": 701,
+    "dtype": "float64"
+  },
+  "experiment": {
+    "identifier": "wh_fixed_budget_5000_staged_v4",
+    "version": 4
+  },
+  "gradient_turnpike": {
+    "checkpoint": "outputs/bptt/run_seed_001/final_model.pt",
+    "update_start": 40000,
+    "update_length": 300,
+    "symmetric_contexts": [0, 5, 10, 20, 40],
+    "dtype": "float64"
+  },
+  "training_comparison": {
+    "description": "Frozen practical BPTT-reference and paired symmetric-TBPTT protocol.",
+    "validation_selection": {
+      "cadence_updates": 500,
+      "strict_improvement": true,
+      "final_model": "validation_selected_best"
+    },
+    "bptt": {
+      "update_length": 1000,
+      "mini_batch_size": 1,
+      "max_updates": 5000,
+      "sampling_seed": "model seed",
+      "past_context_margin": 40,
+      "future_context_margin": 40,
+      "full_context": true
+    },
+    "tbptt": {
+      "symmetric_contexts": [0, 10, 20, 40],
+      "update_length": 50,
+      "mini_batch_size": 4,
+      "max_updates": 5000,
+      "sampling_seed": "10000 + model seed",
+      "past_context_margin": 40,
+      "future_context_margin": 40,
+      "common_update_start_domain": [40, 79910]
+    }
+  }
+}
